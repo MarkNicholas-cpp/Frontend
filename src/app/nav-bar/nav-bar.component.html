@@ -1,0 +1,53 @@
+<nav
+  class="navbar navbar-expand-lg mb-2 navbar-light bg-light- position-sticky"
+  role="navigation"
+>
+  <a class="navbar-brand mr-2" href="#">
+    <img
+      src="https://images-platform.99static.com//avW0z8mjDupC1Ilcczrn8EHLBsg=/332x1704:1271x2643/fit-in/500x500/99designs-contests-attachments/123/123772/attachment_123772689"
+      alt="UniteTogether"
+      width="45px;"
+    /><span>Exploring the darkness of slums</span>
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item" id="HomeNav" role="button">
+        <a class="nav-link" [routerLink]="['/Home']">Home</a>
+      </li>
+      <li class="nav-item" id="WhatwedoNav">
+        <a class="nav-link" [routerLink]="['/Whatwedo']">What we do</a>
+      </li>
+    </ul>
+
+    <div class="button" *ngIf="logoutVisible">
+      <a
+        [routerLink]="['/Login']"
+        class="btn btn-outline-warning m-2"
+        *ngIf="loginHide"
+        >Login</a
+      >
+      <a
+        class="btn btn-success m-2"
+        [routerLink]="['/Signup']"
+        *ngIf="signupHide"
+        >Sign Up</a
+      >
+    </div>
+    <div class="logout" *ngIf="!logoutVisible">
+      <a class="btn btn-danger m-2" [routerLink]="['/Home']">Logout</a>
+    </div>
+  </div>
+</nav>

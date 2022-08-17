@@ -1,0 +1,27 @@
+.Coverpage {
+  background-image: url("https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnxlbnwwfHwwfHw%3D&w=1000&q=80");
+  height: 400px;
+}
+.bg-image{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+h2,h3{
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  color:transparent;
+}
+.Redevelopment{
+    height: 300px;
+    background-image: url("https://www.tridentia.in/wp-content/uploads/2018/01/Tridentia_Goa_Redevelopment_projects.jpg");
+}
+.Monitering{
+    background-image: url("https://www.propertywebmasters.com/wp-content/uploads/2020/03/competition-blog-image.jpg");
+}

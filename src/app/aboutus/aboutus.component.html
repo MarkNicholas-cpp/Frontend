@@ -1,0 +1,29 @@
+
+<div class="Aboutus container">
+  <h2 class="text-center">About us</h2>
+  <p>
+    We are the interface between the people and the government ruling them. In
+  this application we have mentioned all the problems faced by the people in
+  slums.
+  </p>
+  <div class="form-group">
+    <div class="alert alert-danger text-center"  role="alert" *ngIf ="alertFail" else elseBlock>
+      <p class="warning"  *ngIf ="alertEmailMsgFail">😉Not a valid Email😉</p> 
+  
+    </div>
+    <div class="alert alert-success text-center" role="alert" #elseBlock *ngIf ="alertSuccess">
+      <p class="warning ">😊 You'r signup reqest have processed 😊</p>
+    </div>
+    <label for="Subscribe">Email address</label>
+    <input type="email" class="form-control my-2" id="subscribeEmail" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="Email">
+    <a
+    role="button"
+    type="button"
+    class="btn my-2"
+    id="Subscribe"
+    (click)="Verify()"
+  >
+    Subscribe
+  </a>
+  </div>
+</div>

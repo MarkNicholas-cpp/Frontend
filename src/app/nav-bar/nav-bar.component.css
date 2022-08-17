@@ -1,0 +1,21 @@
+nav a img{
+    border-radius:50%;
+  }
+  nav{
+    width: 100%;
+  } 
+  ul li {
+    background-color: transparent !important;
+  }
+  .button{
+    display: flex;
+  }
+@media screen and (max-width: 992px) {
+  .Middle {
+    background-image: url("https://www.mdpi.com/sustainability/sustainability-09-01436/article_deploy/html/images/sustainability-09-01436-g001.png");
+  }
+  ul {
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,15 @@
+#Subscribe{
+    background-color: var(--red);
+    color:white;
+    box-shadow: 0px 14px 15px -3px rgba(0, 0, 0, 0.3);
+    transition: 1s;
+}
+#Subscribe:hover{
+    box-shadow: 0px 32px 15px -3px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 992px){
+    #Subscribe{
+        background-color: var(--blue);
+        color:white;
+    }
+}

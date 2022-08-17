@@ -1,0 +1,72 @@
+<app-nav-bar [logoutVisible]="false"></app-nav-bar>
+<div class="outter d-flex justify-content-center align-items-center">
+  <div class="Main p-5">
+    <p class="text-center">Problems faced by from list below</p>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Sanitation" id="Sanitation" [(ngModel)]="Sanitation" />
+      <label class="form-check-label" for="Sanitation"> Sanitation </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Water Supply" id="WaterSupply" [(ngModel)]="WaterSupply" />
+      <label class="form-check-label" for="WaterSupply"> Water Supply </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="StreetLights" id="StreetLights"
+        [(ngModel)]="StreetLights" />
+      <label class="form-check-label" for="StreetLights"> StreetLights </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="ProperHousing" value="ProperHousing"
+        [(ngModel)]="ProperHousing" />
+      <label class="form-check-label" for="ProperHousing">
+        ProperHousing
+      </label>
+    </div>
+
+    <div class="Responce d-block">
+      <p class="text-center">Responce of Higher officials</p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="YesorNo" id="Yes" [value]="Yes"
+          (click)="officerResponceYes()" />
+        <label class="form-check-label" for="Yes"> Yes </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="YesorNo" id="No" [value]="!Yes"
+          (click)="officerResponceNo()" />
+        <label class="form-check-label" for="No"> No </label>
+      </div>
+      <div class="Yes form" *ngIf="Yes">
+        <label for="YesAnswer" class="form-label">Action taken by the officials</label>
+        <textarea class="form-control bg-warning border border-warning shadow-none" id="Action" rows="3"
+          [(ngModel)]="Action"></textarea>
+      </div>
+      <div class="No form" *ngIf="No">
+        <label for="NoAnswer" class="form-label">Reasons of work decline</label>
+        <textarea class="form-control bg-danger border border-danger shadow-none" id="Reason" rows="3"
+          [(ngModel)]="Reason"></textarea>
+      </div>
+    </div>
+
+    <div class="form">
+      <p for="ManyIssues" class="form-label text-center">
+        Enter your Issues that are not mentioned above
+      </p>
+      <textarea class="form-control" id="Issues" rows="3" cols="5" [(ngModel)]="extraIssues"></textarea>
+    </div>
+    <div class="form">
+      <label for="Upload" class="form-label">Upload the images</label>
+      <input type="file" name="Upload" id="Upload" class="btn btn-outline-secondary" accept="image/png, image/jpeg" />
+    </div>
+    <div class="form">
+      <label for="Areaname" class="form-label">Area Name</label>
+      <input type="text" class="form-control" id="Areaname" placeholder="Enter Area Name" [(ngModel)]="areaName" />
+    </div>
+    <div class="form">
+      <label for="Address" class="form-label">Address</label>
+      <textarea class="form-control" id="Address" rows="3" [(ngModel)]="address"></textarea>
+    </div>
+    <div class="Submit d-flex flex justify-content-center align-items-center">
+      <input type="submit" value="Submit" id="Submit" class="btn btn-primary" role="button" (click)="Verify()" />
+    </div>
+  </div>
+</div>

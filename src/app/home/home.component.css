@@ -1,0 +1,41 @@
+.Middle {
+  background-image: url("https://vulcanostatale.it/wp-content/uploads/2020/06/dji_0023-edit-2-1.jpg");
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+  background-repeat: no-repeat;
+}
+nav a img{
+  border-radius:50%;
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: inherit;
+}
+
+#Home img{
+  float: left;
+  margin: 10px;
+  width: 300px;
+}
+
+@media screen and (max-width: 992px) {
+  .Middle {
+    background-image: url("https://www.mdpi.com/sustainability/sustainability-09-01436/article_deploy/html/images/sustainability-09-01436-g001.png");
+  }
+  ul {
+    justify-content: start;
+    align-items: start;
+  }
+}
+

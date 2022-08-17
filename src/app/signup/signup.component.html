@@ -1,0 +1,52 @@
+<app-nav-bar [signupHide]="false"></app-nav-bar>
+
+<div class="forms mt-2 ">
+  <div class="alert alert-danger text-center" role="alert" *ngIf="alertFail" else elseBlock>
+    <p class="warning" *ngIf="alertPasswordMsgFail">🙂Give a valid Password🙂</p>
+    <p class="warning" *ngIf="alertEmailMsgFail">😉Give a valid Email😉</p>
+
+  </div>
+  <div class="alert alert-success text-center" role="alert" #elseBlock *ngIf="alertSuccess">
+    <p class="warning ">😊 You'r signup reqest have processed 😊</p>
+  </div>
+  <div class="mx-2 p-5 form">
+    <h2 class="text-center">Signup</h2>
+
+    <div class="form-group">
+      <label for="Email">Email address</label>
+
+      <input type="email" required class="form-control" id="Email" aria-describedby="emailHelp"
+        placeholder="Enter email" [(ngModel)]="Email" />
+    </div>
+
+    <div class="form-group">
+      <label for="Password">Password</label>
+
+      <input type="{{ showPwd ? 'text' : 'password' }}" class="form-control" id="Password"
+        aria-describedby="passwordHelp" placeholder="Enter Password" [(ngModel)]="Password" />
+    </div>
+    <div class="form-group">
+      <label for="Password">Re-Enter Password</label>
+
+      <input type="{{ showPwd ? 'text' : 'password' }}" type="password" class="form-control" id="Verifypassword"
+        aria-describedby="Verifypassword" placeholder="Re-Enter Password" [(ngModel)]="verifyPassword" />
+    </div>
+
+    <div class="form-check m-2">
+      <input class="form-check-input" [(ngModel)]="showPwd" type="checkbox" value="" id="Hideshow" />
+
+      <label class="form-check-label" for="Hideshow"> Show password </label>
+    </div>
+
+    <div>
+      <button role="button" type="button"
+        class="btn btn-success d-flex justify-content-center align-items-center mx-auto" id="signup" (click)="Verify()">
+        Signup
+      </button>
+    </div>
+
+    <div class="form-group">
+      <p class="text-center">Alredy have an account? <a [routerLink]="['/Login']">Login</a></p>
+    </div>
+  </div>
+</div>
