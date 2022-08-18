@@ -47,7 +47,7 @@
       >
     </div>
     <div class="logout" *ngIf="!logoutVisible">
-      <a class="btn btn-danger m-2" [routerLink]="['/Home']">Logout</a>
+      <button class="btn btn-danger m-2"(click)="logout()">Logout</button>
     </div>
   </div>
 </nav>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,7 +15,7 @@ export class NavBarComponent implements OnInit {
   signupHide: boolean = true;
   @Input()
   logoutVisible :boolean = true;
-  constructor() { 
+  constructor(private app:AppComponent) { 
   }
 
   ngOnInit(): void {
@@ -49,5 +50,7 @@ export class NavBarComponent implements OnInit {
     });
     })
   }
-
+  logout(){
+    this.app.ngOnInit();
+  }
 }

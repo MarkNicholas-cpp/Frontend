@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { RouteConfigLoadStart, RouterEvent ,Router, RouteConfigLoadEnd} from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { RouteConfigLoadStart, RouterEvent ,Router, RouteConfigLoadEnd} from '@a
 export class AppComponent {
   // Loading: boolean;
   title = 'Frontend';
+  ngOnInit(): void {
+
+  }
   // displayUser!: boolean;
   // constructor(private router: Router ,private event: RouterEvent) {
   //   this.Loading = false;
