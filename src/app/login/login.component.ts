@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+// import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserservService } from '../userserv.service';
 
@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
           },
           err=>{
             console.log(err);
+            this.router.navigate(["Signup"]);
           });
       }
       else {

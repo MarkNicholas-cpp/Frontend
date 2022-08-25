@@ -62,7 +62,7 @@
       <div class="input-group input-group-sm justify-content-center">
         <div class="input-group-prepend">
           <div class="input-group-text">
-            <input type="radio" name="YesorNo" id="Yes" [value]="Yes" (click)="officerResponceYes()" />
+            <input type="radio" name="YesorNo" id="Yes" [value]="true" [(ngModel)]="response.done" />
           </div>
           <label class="input-group-text bg-success text-white" for="Yes"> Yes </label>
         </div>
@@ -72,7 +72,7 @@
       <div class="input-group input-group-sm justify-content-center">
         <div class="input-group-prepend">
           <div class="input-group-text">
-            <input type="radio" name="YesorNo" id="No" [value]="!Yes" (click)="officerResponceNo()" />
+            <input type="radio" name="YesorNo" id="No" [value]="false" [(ngModel)]="response.done" />
           </div>
           <label class="input-group-text bg-danger text-white" for="No"> No </label>
         </div>
@@ -84,24 +84,17 @@
       <div class="input-group-prepend">
         <span class="input-group-text  bg-warning text-white">Action taken by <br> officials</span>
       </div>
-      <textarea class="form-control" id="Action" rows="3" [(ngModel)]="Action"></textarea>
+      <textarea class="form-control" id="Action" rows="3" [(ngModel)]="response.message"></textarea>
     </div>
     <!-- End -->
     <div class="input-group input-group-sm my-2" *ngIf="No">
       <div class="input-group-prepend">
         <span class="input-group-text  bg-danger text-white">Reasons of work decline</span>
       </div>
-      <textarea class="form-control" id="Reason" rows="3" [(ngModel)]="Reason"></textarea>
+      <textarea class="form-control" id="Reason" rows="3" [(ngModel)]="response.message"></textarea>
     </div>
   </div>
 
-
-  <div class="input-group input-group-sm flex-nowrap py-5 flex-direction-column">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Upload file</span>
-    </div>
-    <input type="file" name="Upload" id="Upload" class="btn btn-outline-secondary" accept="image/png, image/jpeg" />
-  </div>
   <div class="input-group">
     <span class="input-group-text">Area Name</span>
     <input type="text" class="form-control" id="Areaname" placeholder="Enter Area Name" [(ngModel)]="areaName" />
