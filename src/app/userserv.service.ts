@@ -5,7 +5,7 @@ const baseUrl="http://localhost:8080/api/users";
   providedIn: 'root'
 })
 export class UserservService {
-
+  details:boolean=false;
   constructor(private http:HttpClient) { }
   public create(data:any){
     return this.http.post(baseUrl,data);
