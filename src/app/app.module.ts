@@ -13,6 +13,8 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { WhatwedoComponent } from './whatwedo/whatwedo.component';
 import { UserformComponent } from './userform/userform.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatmoduleModule } from './matmodule/matmodule.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatmoduleModule
   ],
   providers: [NavBarComponent],
   bootstrap: [AppComponent]

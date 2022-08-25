@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserservService } from '../userserv.service';
 
@@ -9,7 +10,7 @@ import { UserservService } from '../userserv.service';
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private user:UserservService,private router:Router) { }
+  constructor(private user:UserservService,private router:Router,private userserv:UserservService) { }
     ngOnInit(): void {
     
   }
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   showPwd = false;
   Password: string = '';
   Email: string = '';
-  verifyPassword: String = '';
+  verifyPassword:boolean=false;
   alertSuccess: boolean = false
   alertFail: boolean = false;
   alertEmailMsgFail: boolean = false;
@@ -40,13 +41,18 @@ export class LoginComponent implements OnInit {
         this.alertFail = false;
         this.alertEmailMsgFail = false;
         this.alertPasswordMsgFail = false;
-        this.alertSuccess = true;
         this.user.getone(this.Email).subscribe(
           data => {
             console.log(data);
             this.userDet=data;
             if(this.userDet["Password"]==this.Password){
+              this.alertSuccess = true;
+              this.userserv.details=true;
               this.router.navigate(['Userform']);
+            }
+            else{
+              this.alertFail=true;
+              this.verifyPassword=true;
             }
           },
           err=>{
@@ -56,11 +62,13 @@ export class LoginComponent implements OnInit {
       else {
         this.alertFail = true;
         this.alertPasswordMsgFail = true;
+        this.verifyPassword=false;
       }
     }
     else {
       this.alertFail = true;
       this.alertEmailMsgFail = true;
+      this.verifyPassword=false;
     }
   }
 

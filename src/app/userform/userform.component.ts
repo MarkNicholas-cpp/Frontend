@@ -10,6 +10,7 @@ export class UserformComponent implements OnInit {
   private Problems: String[] = [];
   constructor() { }
   ngOnInit(): void {
+    
   }
   Sanitation !: boolean;
   WaterSupply!: boolean;

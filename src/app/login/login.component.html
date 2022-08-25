@@ -3,7 +3,7 @@
   <div class="alert alert-danger text-center" role="alert" *ngIf="alertFail" else elseBlock>
     <p class="warning" *ngIf="alertPasswordMsgFail">🙂Give a valid Password🙂</p>
     <p class="warning" *ngIf="alertEmailMsgFail">😉Give a valid Email😉</p>
-
+    <p class="warning" *ngIf="verifyPassword">😉Incorrect Password😉</p>
   </div>
   <div class="alert alert-success text-center" role="alert" #elseBlock *ngIf="alertSuccess">
     <p class="warning ">😊 You'r Login reqest have processed 😊</p>

@@ -4,11 +4,13 @@
   <div class="alert alert-danger text-center" role="alert" *ngIf="alertFail" else elseBlock>
     <p class="warning" *ngIf="alertPasswordMsgFail">🙂Give a valid Password🙂</p>
     <p class="warning" *ngIf="alertEmailMsgFail">😉Give a valid Email😉</p>
+    <p class="warning" *ngIf="alertEmailExist">😉Email exist😉</p>
 
   </div>
   <div class="alert alert-success text-center" role="alert" #elseBlock *ngIf="alertSuccess">
-    <p class="warning ">😊 You'r signup reqest have processed 😊</p>
+    <p class="warning ">😊 You have Successfully Registered 😊</p>
   </div>
+
   <div class="mx-2 p-5 form">
     <h2 class="text-center">Signup</h2>
 
