@@ -1,6 +1,6 @@
 <app-nav-bar [logoutVisible]="false"></app-nav-bar>
-<div class="grid container border border-primary">
-  <div class="grid py-3">
+<div class="grid container ">
+  <div class="grid py-3 border border-primary">
     <!-- Sanitation -->
     <div class="input-group input-group-sm justify-content-center">
       <div class="input-group-prepend">
@@ -45,7 +45,7 @@
 
 
   <!-- Enter your Issues that are not mentioned above -->
-  <div class="input-group input-group-sm py-3">
+  <div class="input-group input-group-sm py-3 border border-primary">
     <div class="input-group-prepend">
       <span class="input-group-text text-white bg-primary">
         Enter your Issues <br> that are not mentioned above
@@ -55,7 +55,7 @@
   </div>
   <!-- End-->
 
-  <div class="Responce d-block">
+  <div class="Responce d-block border border-primary">
     <p class="text-center">Responce of Higher officials</p>
     <div class="d-flex py-3">
       <!-- Yes -->
@@ -95,14 +95,7 @@
     </div>
   </div>
 
-
-  <div class="input-group input-group-sm flex-nowrap py-5 flex-direction-column">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Upload file</span>
-    </div>
-    <input type="file" name="Upload" id="Upload" class="btn btn-outline-secondary" accept="image/png, image/jpeg" />
-  </div>
-  <div class="input-group">
+  <div class="input-group p-2 border border-primary">
     <span class="input-group-text">Area Name</span>
     <input type="text" class="form-control" id="Areaname" placeholder="Enter Area Name" [(ngModel)]="areaName" />
   </div>
