@@ -19,9 +19,11 @@ export class UserformComponent implements OnInit {
   Yes !: boolean;
   No !: boolean;
   areaName: String = "";
-  address: String = "";
+  Address: String = "";
   Action: String = "";
   Reason: String = "";
+
+  
 
   Verify() {
     if (this.Sanitation) {

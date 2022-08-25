@@ -1,72 +1,116 @@
 <app-nav-bar [logoutVisible]="false"></app-nav-bar>
-<div class="outter d-flex justify-content-center align-items-center">
-  <div class="Main p-5">
-    <p class="text-center">Problems faced by from list below</p>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Sanitation" id="Sanitation" [(ngModel)]="Sanitation" />
-      <label class="form-check-label" for="Sanitation"> Sanitation </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Water Supply" id="WaterSupply" [(ngModel)]="WaterSupply" />
-      <label class="form-check-label" for="WaterSupply"> Water Supply </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="StreetLights" id="StreetLights"
-        [(ngModel)]="StreetLights" />
-      <label class="form-check-label" for="StreetLights"> StreetLights </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="ProperHousing" value="ProperHousing"
-        [(ngModel)]="ProperHousing" />
-      <label class="form-check-label" for="ProperHousing">
-        ProperHousing
-      </label>
-    </div>
-
-    <div class="Responce d-block">
-      <p class="text-center">Responce of Higher officials</p>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="YesorNo" id="Yes" [value]="Yes"
-          (click)="officerResponceYes()" />
-        <label class="form-check-label" for="Yes"> Yes </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="YesorNo" id="No" [value]="!Yes"
-          (click)="officerResponceNo()" />
-        <label class="form-check-label" for="No"> No </label>
-      </div>
-      <div class="Yes form" *ngIf="Yes">
-        <label for="YesAnswer" class="form-label">Action taken by the officials</label>
-        <textarea class="form-control bg-warning border border-warning shadow-none" id="Action" rows="3"
-          [(ngModel)]="Action"></textarea>
-      </div>
-      <div class="No form" *ngIf="No">
-        <label for="NoAnswer" class="form-label">Reasons of work decline</label>
-        <textarea class="form-control bg-danger border border-danger shadow-none" id="Reason" rows="3"
-          [(ngModel)]="Reason"></textarea>
+<div class="grid container border border-primary">
+  <div class="grid py-3">
+    <!-- Sanitation -->
+    <div class="input-group input-group-sm justify-content-center">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="checkbox" value="Sanitation" id="Sanitation" [(ngModel)]="Sanitation" />
+        </div>
+        <label class="input-group-text bg-primary text-white" for="Sanitation"> Sanitation </label>
       </div>
     </div>
 
-    <div class="form">
-      <p for="ManyIssues" class="form-label text-center">
-        Enter your Issues that are not mentioned above
-      </p>
-      <textarea class="form-control" id="Issues" rows="3" cols="5" [(ngModel)]="extraIssues"></textarea>
+    <!-- WaterSupply -->
+    <div class="input-group input-group-sm justify-content-center ">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-white" for="WaterSupply"> Water Supply </label>
+        <div class="input-group-text">
+          <input class="" type="checkbox" value="Water Supply" id="WaterSupply" [(ngModel)]="WaterSupply" />
+        </div>
+      </div>
     </div>
-    <div class="form">
-      <label for="Upload" class="form-label">Upload the images</label>
-      <input type="file" name="Upload" id="Upload" class="btn btn-outline-secondary" accept="image/png, image/jpeg" />
+    <!-- Street lights -->
+    <div class="input-group input-group-sm justify-content-center">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input class="" type="checkbox" value="StreetLights" id="StreetLights" [(ngModel)]="StreetLights" />
+        </div>
+        <label class="input-group-text bg-primary text-white" for="StreetLights"> Street Lights </label>
+
+      </div>
     </div>
-    <div class="form">
-      <label for="Areaname" class="form-label">Area Name</label>
-      <input type="text" class="form-control" id="Areaname" placeholder="Enter Area Name" [(ngModel)]="areaName" />
-    </div>
-    <div class="form">
-      <label for="Address" class="form-label">Address</label>
-      <textarea class="form-control" id="Address" rows="3" [(ngModel)]="address"></textarea>
-    </div>
-    <div class="Submit d-flex flex justify-content-center align-items-center">
-      <input type="submit" value="Submit" id="Submit" class="btn btn-primary" role="button" (click)="Verify()" />
+    <!-- ProperHousing -->
+    <div class="input-group input-group-sm justify-content-center">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-white" for="ProperHousing">
+          Proper Housing
+        </label>
+        <div class="input-group-text">
+          <input class="" type="checkbox" id="ProperHousing" value="ProperHousing" [(ngModel)]="ProperHousing" />
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+  <!-- Enter your Issues that are not mentioned above -->
+  <div class="input-group input-group-sm py-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text text-white bg-primary">
+        Enter your Issues <br> that are not mentioned above
+      </span>
+    </div>
+    <textarea class="form-control" id="Issues" rows="3" cols="5" [(ngModel)]="extraIssues"></textarea>
+  </div>
+  <!-- End-->
+
+  <div class="Responce d-block">
+    <p class="text-center">Responce of Higher officials</p>
+    <div class="d-flex py-3">
+      <!-- Yes -->
+      <div class="input-group input-group-sm justify-content-center">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="radio" name="YesorNo" id="Yes" [value]="Yes" (click)="officerResponceYes()" />
+          </div>
+          <label class="input-group-text bg-success text-white" for="Yes"> Yes </label>
+        </div>
+      </div>
+      <!-- End -->
+      <!-- No -->
+      <div class="input-group input-group-sm justify-content-center">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="radio" name="YesorNo" id="No" [value]="!Yes" (click)="officerResponceNo()" />
+          </div>
+          <label class="input-group-text bg-danger text-white" for="No"> No </label>
+        </div>
+      </div>
+      <!-- End -->
+    </div>
+    <!-- Yes responce -->
+    <div class="input-group input-group-sm my-2" *ngIf="Yes">
+      <div class="input-group-prepend">
+        <span class="input-group-text  bg-warning text-white">Action taken by <br> officials</span>
+      </div>
+      <textarea class="form-control" id="Action" rows="3" [(ngModel)]="Action"></textarea>
+    </div>
+    <!-- End -->
+    <div class="input-group input-group-sm my-2" *ngIf="No">
+      <div class="input-group-prepend">
+        <span class="input-group-text  bg-danger text-white">Reasons of work decline</span>
+      </div>
+      <textarea class="form-control" id="Reason" rows="3" [(ngModel)]="Reason"></textarea>
+    </div>
+  </div>
+
+
+  <div class="input-group input-group-sm flex-nowrap py-5 flex-direction-column">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Upload file</span>
+    </div>
+    <input type="file" name="Upload" id="Upload" class="btn btn-outline-secondary" accept="image/png, image/jpeg" />
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">Area Name</span>
+    <input type="text" class="form-control" id="Areaname" placeholder="Enter Area Name" [(ngModel)]="areaName" />
+  </div>
+  <div class="form">
+    <label for="Address" class="form-label">Address</label>
+    <textarea class="form-control" id="Address" rows="3" [(ngModel)]="Address"></textarea>
+  </div>
+  <div class="Submit d-flex flex justify-content-center align-items-center">
+    <input type="submit" value="Submit" id="Submit" class="btn btn-primary" role="button" (click)="Verify()" />
+  </div>
+</div>            
